@@ -1,0 +1,25 @@
+/*
+Convert boolean values to strings 'Yes' or 'No'.
+*/
+
+class YesOrNo
+{
+  public static String boolToWord(boolean b)
+  {
+    if(b)
+      return "Yes";
+    return "No";
+  }
+  
+}
+
+//Use ternary operator.
+
+class YesOrNo
+{
+  public static String boolToWord(boolean b)
+  {
+    return b ? "Yes" : "No";
+  }
+  
+}
