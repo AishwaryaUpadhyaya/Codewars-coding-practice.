@@ -12,6 +12,7 @@ Note: for this kata y isn't considered a vowel.
 
 /*Lesson learnt: 1.String is immutable.
                  2.StringBuilder and StringBuffer is mutable.
+*/
 
 
 public class Troll {
