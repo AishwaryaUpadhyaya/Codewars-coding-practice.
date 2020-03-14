@@ -1,0 +1,54 @@
+/*
+
+Your task is to make a function that can take any non-negative integer as a argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+Examples:
+Input: 21445 Output: 54421
+
+Input: 145263 Output: 654321
+
+Input: 123456789 Output: 987654321
+
+*/
+
+import java.util.*; 
+public class DescendingOrder {
+  public static int sortDesc(final int num) {
+    int n = num;
+    ArrayList<Integer> arrli = new ArrayList<Integer>();
+    for(int i = 0 ; n> 0; i++){
+      int x;
+      x = (n%10);
+      n = n/10;
+      arrli.add(x);
+    }
+    Collections.sort(arrli);
+    for(int i=(arrli.size()-1); i>=0; i--)
+    {
+      n *= 10; 
+      n += arrli.get(i);
+    }
+    return n;
+  }
+}
+
+//Clever
+
+import java.util.*;
+
+public class DescendingOrder {
+  public static int sortDesc(final int num) {
+    String[] numbers = (Integer.toString(Integer.valueOf(num))).split("");
+    Arrays.sort(numbers);
+    
+    String result = "";
+    
+    for(String s : numbers)
+    {
+      result = s + result;
+    }
+    
+    return Integer.parseInt(result);
+  }
+}
+
