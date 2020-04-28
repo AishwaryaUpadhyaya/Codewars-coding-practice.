@@ -1,0 +1,27 @@
+/*
+Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+
+Examples
+toCamelCase("the-stealth-warrior"); // returns "theStealthWarrior"
+
+toCamelCase("The_Stealth_Warrior"); // returns "TheStealthWarrior"
+*/
+
+import java.lang.StringBuilder;
+class Solution{
+
+  static String toCamelCase(String s){
+    StringBuilder str = new StringBuilder();
+    char[] arr = s.toCharArray();
+    for(int i=0; i<s.length(); i++){
+      if(arr[i] != '-' && arr[i] != '_'){
+        str.append(arr[i]);
+      }
+      else{
+        str.append(Character.toUpperCase(arr[i+1]));
+        i++;
+      }
+    }
+    return new String(str);
+  }
+}
